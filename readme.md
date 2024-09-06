@@ -4,7 +4,7 @@
     打印机地址，即打印机运行的服务地址
     模板类型
 # 开发文档
-# 本服务基于 Django 框架实现，有意学习可异步CSDN
+# 本服务基于 Django 框架实现，有意学习可移步CSDN
 https://blog.csdn.net/qq_41710802/article/details/138891582
 ## 驱动相关
     pip install pywin32
