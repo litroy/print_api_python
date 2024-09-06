@@ -1,0 +1,1 @@
+python django_service.py install
