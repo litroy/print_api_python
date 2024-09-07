@@ -1,8 +1,4 @@
-# 安装 pip install pywin32
-    打印机名称 
-    标签模板名称
-    打印机地址，即打印机运行的服务地址
-    模板类型
+
 # 开发文档
 # 本服务基于 Django 框架实现，有意学习可移步CSDN
 https://blog.csdn.net/qq_41710802/article/details/138891582
@@ -29,8 +25,16 @@ http://localhost:8003/api/af_admin/print/
             }
     ]
 }
+## 设置为windows服务自动启动
 django_service.py 文件是为了将运行环境安装为windows的服务
-相关命令
 安装为服务
 python django_service.py install
-# 后续开源 自己开发的生产管理系统   已实现钉钉通知相关、用友U9C erpOPENapi对接相关、通用型编号生成器等等。
+# 后续开源 自己开发的生产管理系统 
+前端使用 js库：vue3.0 +
+PC前端UI:element plus  
+H5移动前端UI：nutui  (京东UI)
+前端表格库：vxe-table
+后端：
+python +django
+持久层 redis  .....
+已实现钉钉通知相关、用友U9C erpOPENapi对接相关、通用型编号生成器等等。
