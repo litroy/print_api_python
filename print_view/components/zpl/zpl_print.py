@@ -26,27 +26,31 @@ def replace_in_prn(file_path, old_string, new_string, output_file=None):
  
 # zpl_print("模板名称"，打印机名称，打印份数，打印内容)
 def zpl_print(template_name,printer_name,print_count,data):
-    project_root = settings.BASE_DIR
-    template_path  = os.path.join(project_root, "print_view", "template", template_name)
-    # print(template_path)
-    with open(template_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-    # return
-    # print(content)
-    print_data = replace_content(content, print_count,data)
-    
-    # print(print_data)
-    # code = '40'
-    # message = '不是GET或POST请求！'
-    #发送打印数据到打印机
-    get_data = f"{template_name},{printer_name},{print_count},{data}"
-    re_data = send_to_local_printer(printer_name,print_data,get_data)
-    if re_data["success"]:
+    try:
+        project_root = settings.BASE_DIR
+        template_path  = os.path.join(project_root, "print_view", "template", template_name)
+        # print(template_path)
         
-        # return_data =  {'template_name': template_name, 'printer_name': printer_name, 'data': print_data}
-        return re_data
-    else:
-        return re_data
+        with open(template_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        # return
+        # print(content)
+        print_data = replace_content(content, print_count,data)
+        
+        # print(print_data)
+        # code = '40'
+        # message = '不是GET或POST请求！'
+        #发送打印数据到打印机
+        get_data = f"{template_name},{printer_name},{print_count},{data}"
+        re_data = send_to_local_printer(printer_name,print_data,get_data)
+        if re_data["success"]:
+            
+            # return_data =  {'template_name': template_name, 'printer_name': printer_name, 'data': print_data}
+            return re_data
+        else:
+            return re_data
+    except FileNotFoundError:
+        return {"success":False,"message":f"打印失败!未找到模板！","data":"打印失败!未找到模板！"}
     # print(return_data)
     
 # 3. 替换指定内容
