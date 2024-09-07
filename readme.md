@@ -17,7 +17,7 @@ http://localhost:8003/api/af_admin/print/
     前端传递json数据举例
     可以多条数据 打印
     {
-    "template_name":"TP01",
+    "template_name":"TP01.prn",
     "printer_name":"打印机名称",
     "print_count":1,
     "data":[
